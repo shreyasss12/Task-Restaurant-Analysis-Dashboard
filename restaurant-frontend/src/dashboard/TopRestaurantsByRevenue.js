@@ -139,3 +139,4 @@ const TopRestaurantsByRevenue = () => {
 };
 
 export default TopRestaurantsByRevenue;
+import React, { useEffect, useState } from "react";
