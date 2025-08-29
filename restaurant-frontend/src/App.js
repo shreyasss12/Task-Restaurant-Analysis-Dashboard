@@ -5,6 +5,7 @@ import {
   Drawer,
   List,
   ListItem,
+  ListItemButton,
   ListItemText,
   Toolbar,
   AppBar,
@@ -55,19 +56,22 @@ const App = () => {
         >
           <Toolbar />
           <List>
-            <ListItem
-              button
-              selected={selectedView === "revenue"}
-              onClick={() => setSelectedView("revenue")}
-            >
-              <ListItemText primary="🏆 Top Revenue" />
+            <ListItem disablePadding>
+              <ListItemButton
+                selected={selectedView === "revenue"}
+                onClick={() => setSelectedView("revenue")}
+              >
+                <ListItemText primary="🏆 Top Revenue" />
+              </ListItemButton>
             </ListItem>
-            <ListItem
-              button
-              selected={selectedView === "list"}
-              onClick={() => setSelectedView("list")}
-            >
-              <ListItemText primary="📋 Restaurant List" />
+
+            <ListItem disablePadding>
+              <ListItemButton
+                selected={selectedView === "list"}
+                onClick={() => setSelectedView("list")}
+              >
+                <ListItemText primary="📋 Restaurant List" />
+              </ListItemButton>
             </ListItem>
           </List>
         </Drawer>

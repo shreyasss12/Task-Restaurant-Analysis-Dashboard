@@ -70,7 +70,7 @@ const TopRestaurantsByRevenue = () => {
         {/* 🔹 Date Range Filters */}
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <Grid container spacing={2} alignItems="center" sx={{ mb: 2 }}>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <DatePicker
                 label="Start Date"
                 value={startDate}
@@ -78,7 +78,7 @@ const TopRestaurantsByRevenue = () => {
                 slotProps={{ textField: { fullWidth: true } }}
               />
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <DatePicker
                 label="End Date"
                 value={endDate}
@@ -86,7 +86,7 @@ const TopRestaurantsByRevenue = () => {
                 slotProps={{ textField: { fullWidth: true } }}
               />
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Button
                 variant="contained"
                 color="primary"
@@ -104,11 +104,11 @@ const TopRestaurantsByRevenue = () => {
         ) : (
           <Grid container spacing={2}>
             {/* 🔹 Pie Chart */}
-            <Grid item xs={12} md={6} style={{ height: 300 }}>
+            <Grid size={{ xs: 12, md: 6 }} sx={{ height: 300 }}>
               <Typography variant="subtitle1" gutterBottom>
                 🥧 Revenue Distribution
               </Typography>
-              <ResponsiveContainer width="400%" height="100%">
+              <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
                     data={data}

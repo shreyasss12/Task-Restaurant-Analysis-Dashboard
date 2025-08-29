@@ -65,14 +65,14 @@ const RestaurantTrends = ({ restaurantId }) => {
 
         {/* Date Filters */}
         <Grid container spacing={2} sx={{ mb: 2 }}>
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <DatePicker
               label="Start Date"
               value={startDate}
               onChange={(newValue) => setStartDate(newValue)}
             />
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <DatePicker
               label="End Date"
               value={endDate}

@@ -64,7 +64,7 @@ const RestaurantList = ({ onRestaurantSelect }) => {
 
         {/* 🔍 Filters */}
         <Grid container spacing={2} sx={{ mb: 2 }}>
-          <Grid item xs={3}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <TextField
               label="Search by name"
               variant="outlined"
@@ -73,7 +73,8 @@ const RestaurantList = ({ onRestaurantSelect }) => {
               onChange={(e) => setQuery(e.target.value)}
             />
           </Grid>
-          <Grid item xs={3}>
+
+          <Grid size={{ xs: 12, md: 3 }}>
             <TextField
               label="Filter by location"
               variant="outlined"
@@ -82,7 +83,8 @@ const RestaurantList = ({ onRestaurantSelect }) => {
               onChange={(e) => setLocation(e.target.value)}
             />
           </Grid>
-          <Grid item xs={3}>
+
+          <Grid size={{ xs: 12, md: 3 }}>
             <TextField
               label="Filter by cuisine"
               variant="outlined"
@@ -91,7 +93,12 @@ const RestaurantList = ({ onRestaurantSelect }) => {
               onChange={(e) => setCuisine(e.target.value)}
             />
           </Grid>
-          <Grid item xs={3} display="flex" alignItems="center">
+
+          <Grid
+            size={{ xs: 12, md: 3 }}
+            display="flex"
+            alignItems="center"
+          >
             <Button
               variant="outlined"
               color="secondary"
@@ -115,13 +122,14 @@ const RestaurantList = ({ onRestaurantSelect }) => {
                 { field: "location", headerName: "Location", width: 200 },
                 { field: "cuisine", headerName: "Cuisine", width: 200 },
               ]}
-              pageSize={perPage}
+              pageSizeOptions={[5, 10, 20]}
+              paginationModel={{ page: page - 1, pageSize: perPage }}
               rowCount={total}
-              pagination
               paginationMode="server"
-              onPageChange={(newPage) => setPage(newPage + 1)} // DataGrid is 0-based
-              onPageSizeChange={(newSize) => setPerPage(newSize)}
-              rowsPerPageOptions={[5, 10, 20]}
+              onPaginationModelChange={(model) => {
+                setPage(model.page + 1); // DataGrid is 0-based
+                setPerPage(model.pageSize);
+              }}
               onRowClick={(params) => onRestaurantSelect(params.row.id)}
               getRowId={(row) => row.id}
             />
