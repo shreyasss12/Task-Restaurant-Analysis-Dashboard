@@ -140,5 +140,3 @@ const TopRestaurantsByRevenue = () => {
 
 export default TopRestaurantsByRevenue; 
 
-
-hhh
