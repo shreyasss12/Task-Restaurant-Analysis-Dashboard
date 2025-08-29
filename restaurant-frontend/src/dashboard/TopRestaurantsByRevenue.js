@@ -138,4 +138,4 @@ const TopRestaurantsByRevenue = () => {
   );
 };
 
-export default TopRestaurantsByRevenue;
+export default TopRestaurantsByRevenue; 
