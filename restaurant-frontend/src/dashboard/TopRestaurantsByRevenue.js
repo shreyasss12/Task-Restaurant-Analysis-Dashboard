@@ -35,7 +35,6 @@ const TopRestaurantsByRevenue = () => {
         "http://127.0.0.1:8000/api/restaurants/top/revenue",
         {
           params: {
-
             start_date: startDate ? startDate.format("YYYY-MM-DD") : "",
             end_date: endDate ? endDate.format("YYYY-MM-DD") : "",
           },
